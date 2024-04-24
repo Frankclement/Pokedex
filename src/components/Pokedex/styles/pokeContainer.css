@@ -1,0 +1,6 @@
+.pokeContainer {
+    display: flex;
+    gap: 3.4em;
+    flex-wrap: wrap;
+    justify-content: center;
+}

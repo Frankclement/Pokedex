@@ -1,0 +1,602 @@
+.pokeCard {
+    background-color: #161616;
+    color: whitesmoke;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 2em 1.5em;
+}
+
+.pokeCard__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.pokeCard__icon-back {
+    width: 20px;
+    font-size: 1.9rem;
+    color: #777777;
+    position: relative;
+    left: -5px;
+}
+
+.pokeCard__icon-cora {
+    font-size: 1.3rem;
+    color: #777777;
+    cursor: pointer;
+    transition: color 0.5s ;
+}
+
+.pokeCard__icon-cora:hover {
+    color: rgb(207, 42, 42);
+}
+
+.pokeCard__content-img {
+    margin: 0 0 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.pokeCard__img {
+    width: 300px;
+}
+
+.pokeCard__img--bg {
+    top: 1.5em;
+    width: 200px;
+}
+.pokeCard__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokeCard__name {
+    font-size: 2.2rem;
+    text-transform: capitalize;
+    margin-bottom: 0.2em;
+    position: relative;
+}
+
+.pokeCard__titulo {
+    font-size: 1rem;
+    color: #777777;
+    position: relative;
+}
+
+.pokeCard__tipo-content {
+    display: flex;
+    gap: 2em;
+    margin: 1em 0;
+}
+
+.pokeCard__tipo {
+    font-size: 0.8em;
+    outline: solid 1px currentColor;
+    border-radius: 1em;
+    width: 90px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pokeCard__tipo:hover {
+    transform: scale(1.02);
+    box-shadow: currentColor 0px 5px 15px 0px;
+}
+
+.pokeCard__stats {
+    margin: 1.5em 0 3em;
+}
+
+.pokeCard__stats-tittle {
+    font-size: 1.3em;
+    position: relative;
+    cursor: pointer;
+}
+
+.pokeCard__stats-tittle::after {
+    content: '';
+    width: 2.6em;
+    height: 3px;
+    background-color: rgba(245, 245, 245, 0.637);
+    position: absolute;
+    bottom: -5px;
+    left:0;
+    opacity: 0.5;
+    border-radius: 2px;
+}
+
+.pokeCard__stats-items {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    transition: background 0.3s ease;
+}
+
+.pokeCard__stats-item {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.pokeCard__stats-item--name {
+    text-transform: capitalize;
+    color: #b1b0b0;
+    font-size: 0.8rem;
+    width: 100px;
+}
+
+.pokeCard__stats-item--level {
+    font-size: 0.9rem;
+    width: 40px;
+}
+
+.pokeCard__stats-item--relleno {
+    position: relative;
+    background-color: #777777;
+    width: 100%;
+    border-radius: 1em;
+    height: 0.9em;
+}
+
+.pokeCard__stats-item--barra {
+    position: absolute;
+    background: linear-gradient(49deg, rgb(138, 139, 138) 0%, rgb(225, 226, 225) 100%);
+    height: 0.9em;
+    border-radius: 1em;
+    left: 0;
+}
+
+.pokeCard__stats-item:nth-child(4) .pokeCard__stats-item--barra,
+.pokeCard__stats-item:nth-child(5) .pokeCard__stats-item--barra {
+    background: linear-gradient(49deg, rgb(53, 172, 93) 0%, rgb(48, 197, 110) 100%);
+}
+
+.pokeCard__abilities {
+    margin: 2em 0 0;
+    width: 100%;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+
+}
+
+.pokeCard__abilitie {
+    padding: 0.6em 1em;
+    border-radius: 2em;
+    cursor: pointer;
+    outline: 2px solid #333;
+    transition: box-shadow 0.5s;
+}
+.pokeCard__abilitie:hover {
+    box-shadow: rgba(255, 255, 255, 0.199) 0px 3px 12px;
+}
+
+/* Filter -- grass */
+.bgCard-grass {
+    filter:
+        var(--dropShadow-grass)
+}
+
+.border-grass {
+    outline: var(--outline-grass);
+    color: var(--color__grass);
+    position: relative;
+}
+
+.border-grass::after {
+    content: '🌿';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- fire */
+.bgCard-fire {
+    filter:
+        var(--dropShadow-fire);
+}
+
+.border-fire {
+    outline: var(--outline-fire);
+    color: var(--color__fire);
+    position: relative;
+}
+
+.border-fire::after {
+    content: '🔥';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- poison */
+.bgCard-poison {
+    filter: var(--dropShadow-poison);
+}
+
+
+.border-poison {
+    outline: var(--outline-poison);
+    color: var(--color__poison);
+    position: relative;
+}
+
+/* Filter -- water */
+.bgCard-water {
+    filter: var(--dropShadow-water);
+}
+
+
+.border-water {
+    outline: var(--outline-water);
+    color: var(--color__water);
+    position: relative;
+}
+
+
+.border-water::after {
+    content: '💧';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- normal */
+.bgCard-normal {
+    filter: var(--dropShadow-normal);
+}
+
+
+.border-normal {
+    outline: var(--outline-normal);
+    color: var(--color__normal);
+    position: relative;
+}
+
+/* Filter -- fighting */
+.bgCard-fighting {
+    filter: var(--dropShadow-fighting);
+}
+
+
+.border-fighting {
+    outline: var(--outline-fighting);
+    color: var(--color__fighting);
+    position: relative;
+}
+
+
+.border-fighting::after {
+    content: '🥊';
+    position: absolute;
+    left: 0.3em;
+    top: 4px;
+}
+
+/* Filter -- flying */
+.bgCard-flying {
+    filter: var(--dropShadow-flying);
+}
+
+
+.border-flying {
+    outline: var(--outline-flying);
+    color: var(--color__flying);
+    position: relative;
+}
+
+/* Filter -- ground */
+.bgCard-ground {
+    filter: var(--dropShadow-ground);
+}
+
+
+.border-ground {
+    outline: var(--outline-ground);
+    color: var(--color__ground);
+    position: relative;
+}
+
+/* Filter -- rock */
+.bgCard-rock {
+    filter: var(--dropShadow-rock);
+}
+
+
+.border-rock {
+    outline: var(--outline-rock);
+    color: var(--color__rock);
+    position: relative;
+}
+
+
+.border-rock::after {
+    content: '🪨';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- bug */
+.bgCard-bug {
+    filter: var(--dropShadow-bug);
+}
+
+.border-bug {
+    outline: var(--outline-bug);
+    color: var(--color__bug);
+    position: relative;
+}
+
+.border-bug::after {
+    content: '🐛';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- ghost */
+.bgCard-ghost {
+    filter: var(--dropShadow-ghost);
+}
+
+.border-ghost {
+    outline: var(--outline-ghost);
+    color: var(--color__ghost);
+    position: relative;
+}
+
+
+/* Filter -- steel */
+.bgCard-steel {
+    filter: var(--dropShadow-steel);
+}
+
+.border-steel {
+    outline: var(--outline-steel);
+    color: var(--color__steel);
+    position: relative;
+}
+
+.border-steel::after {
+    content: '🔩';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- electric */
+.bgCard-electric {
+    filter: var(--dropShadow-electric);
+}
+
+.border-electric {
+    outline: var(--outline-electric);
+    color: var(--color__electric);
+    position: relative;
+}
+
+.border-electric::after {
+    content: '⚡️';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- psychic */
+.bgCard-psychic {
+    filter: var(--dropShadow-psychic);
+}
+
+.border-psychic {
+    outline: var(--outline-psychic);
+    color: var(--color__psychic);
+    position: relative;
+}
+
+/* Filter -- ice */
+.bgCard-ice {
+    filter: var(--dropShadow-ice);
+}
+
+.border-ice {
+    outline: var(--outline-ice);
+    color: var(--color__ice);
+    position: relative;
+}
+
+.border-ice::after {
+    content: '❄️';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- dragon */
+.bgCard-dragon {
+    filter: var(--dropShadow-dragon);
+}
+
+.border-dragon {
+    outline: var(--outline-dragon);
+    color: var(--color__dragon);
+    position: relative;
+}
+
+.border-dragon::after {
+    content: '🐉';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- dark */
+.bgCard-dark {
+    filter: var(--dropShadow-dark);
+}
+
+.border-dark {
+    outline: var(--outline-dark);
+    color: var(--color__dark);
+    position: relative;
+}
+
+.border-dark::after {
+    content: '🌑';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- fairy */
+.bgCard-fairy {
+    filter: var(--dropShadow-fairy);
+}
+
+.border-fairy {
+    outline: var(--outline-fairy);
+    color: var(--color__fairy);
+    position: relative;
+}
+
+.border-fairy::after {
+    content: '🧚‍♀️';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- unknown */
+.bgCard-unknown {
+    filter: var(--dropShadow-unknown);
+}
+
+.border-unknown {
+    outline: var(--outline-unknown);
+    color: var(--color__unknown);
+    position: relative;
+}
+
+.border-unknown::after {
+    content: '❓';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+/* Filter -- shadow */
+.bgCard-shadow {
+    filter: var(--dropShadow-shadow);
+}
+
+.border-shadow {
+    outline: var(--outline-shadow);
+    color: var(--color__shadow);
+    position: relative;
+}
+
+.border-shadow::after {
+    content: '🌑';
+    position: absolute;
+    left: 0.5em;
+    top: 4px;
+}
+
+@media (min-width:600px) {
+    .pokeCard__stats-item--relleno, .pokeCard__stats-item--barra {
+        height: 1.3em;
+    }
+}
+
+@media (min-width:800px) {
+    .pokeCard__stats-item--relleno, .pokeCard__stats-item--barra {
+        height: 1.5em;
+    }
+    .pokeCard {
+        padding: 2em 3em;
+    }
+    .pokeCard__img--bg {
+        top: 2em;
+        right: -1em;
+        width: 230px;
+    }
+}
+@media (min-width:1100px) {
+    .pokeCard  {
+        margin: 0 auto;
+        padding: 2em 1em;
+    }
+    .pokeCard__name {
+        margin: 0.6em 0 0.4em;
+        font-size: 2.4rem;
+    }
+    .pokeCard__titulo {
+        font-size: 1.2rem;
+    }
+
+    .pokeCard__img--bg {
+        top: 2em;
+        right: 1em;
+        width: 250px;
+    }
+    .pokeCard__tipo {
+        width: 140px;
+        height: 29px;
+        font-size: 1rem;
+    }
+    .pokeCard__header {
+        font-size: 1.7rem;
+    }
+    .pokeCard__icon-back {
+        font-size: 2.2rem;
+    }
+    .pokeCard__icon-cora {
+        font-size: 2rem;
+    }
+    .pokeCard__img {
+        width: 400px;
+    }
+    .pokeCard__stats-item {
+        gap: 4em;
+    }
+    .pokeCard__stats-item--relleno, .pokeCard__stats-item--barra {
+        height: 2em;
+    }
+
+    .pokeCard__stats-item--name {
+        font-size: 1rem;
+    }
+
+    .pokeCard__stats-item--level {
+        font-size: 1.1rem;
+    }
+    .pokeCard__abilitie {
+        margin: 1em 0 0;
+        font-size: 1.2rem;
+    }
+    
+    .pokeCard__footer, .pokeCard__stats, .pokeCard__body, .pokeCard__content-img, .pokeCard__header {
+        max-width: 1100px;
+    }
+    .pokeCard__header, .pokeCard__body, .pokeCard__footer {
+        margin: 0 auto;
+    }
+    .pokeCard__content-img {
+        margin: 0 auto 2em;
+    }
+    .pokeCard__stats {
+        margin: 1.5em auto 3em;
+    }
+}

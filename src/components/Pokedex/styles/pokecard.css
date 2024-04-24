@@ -1,0 +1,337 @@
+.pokecard {
+    width: 100%;
+    max-width: 320px;
+    font-size: 1rem;
+    border-radius: 0.8em;
+    border: 4px solid currentColor;
+    overflow: hidden;
+    background-color: #222;
+    cursor: pointer;
+    transition: perspective 0.5s, scale 0.5s, box-shadow 0.5s;
+}
+.pokecard__header {
+    aspect-ratio: 2;
+    position: relative;
+    background-color: azure;
+}
+
+.pokecard__img {
+    position: absolute;
+    width: 65%;
+    bottom: -4em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pokecard__body {
+    padding-top: 3.7em;
+}
+
+.pokecard__name {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.pokecard__types {
+    display: flex;
+    justify-content: center;
+    gap: 6em;
+}
+
+.pokecard__types-item {
+    text-transform: capitalize;
+    position: relative;
+    font-size: 0.8rem;
+    margin-top: 0.5em;
+    color: rgb(209, 209, 209);
+}
+
+.pokecard__types-item::before {
+    content: '/';
+    left: -4em;
+    position: absolute;
+}
+
+.pokecard__types-item:first-child::before {
+    content: '';
+}
+
+.pokecard__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em 0.2em;
+    padding: 0.5em 0.5em 2em;
+    justify-items: center;
+    position: relative;
+    margin-top: 1em;
+}
+
+.pokecard__stats::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    width: 95%;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+}
+
+.pokecard__stats-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.pokecard__stats-label {
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-size: 0.7rem;
+    color: whitesmoke;
+}
+
+.pokecard__stats-value {
+    font-size: 1.1rem;
+    color: whitesmoke;
+}
+
+.pokeCard__btnBack {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* GRASS --- efect */
+.shadow-grass {
+    filter: var(--filter--grass);
+}
+
+.grass {
+    color: var(--color--grass);
+}
+
+.bg-grass {
+    background: var(--background--grass);
+}
+
+/* BUG --- efect */
+.shadow-bug {
+    filter: var(--filter--bug);
+}
+
+.bug {
+    color: var(--color--bug);
+}
+
+.bg-bug {
+    background: var(--background--bug);
+}
+
+/* WATER --- efect */
+.shadow-water {
+    filter: var(--filter--water);
+}
+
+.water {
+    color: var(--color--water);
+}
+
+.bg-water {
+    background: var(--background--water);
+}
+
+/* FIRE --- efect */
+.shadow-fire {
+    filter: var(--filter--fire);
+}
+
+.fire {
+    color: var(--color--fire);
+}
+
+.bg-fire {
+    background: var(--background--fire);
+}
+
+/* DARK --- efect */
+.shadow-dark {
+    filter: var(--filter--dark);
+}
+
+.dark {
+    color: var(--color--dark);
+}
+
+.bg-dark {
+    background: var(--background--dark);
+}
+
+/* NORMAL --- efect */
+.shadow-normal {
+    filter: var(--filter--normal);
+}
+
+.normal {
+    color: var(--color--normal);
+}
+
+.bg-normal {
+    background: var(--background--normal);
+}
+
+/* FIGHTING --- efect */
+.shadow-fighting {
+    filter: var(--filter--fighting);
+}
+
+.fighting {
+    color: var(--color--fighting);
+}
+
+.bg-fighting {
+    background: var(--background--fighting);
+}
+
+/* FLYING --- efect */
+.shadow-flying {
+    filter: var(--filter--flying);
+}
+
+.flying {
+    color: var(--color--flying);
+}
+
+.bg-flying {
+    background: var(--background--flying);
+}
+
+/* POISON --- efect */
+.shadow-poison {
+    filter: var(--filter--poison);
+}
+
+.poison {
+    color: var(--color--poison);
+}
+
+.bg-poison {
+    background: var(--background--poison);
+}
+
+/* GROUND --- efect */
+.shadow-ground {
+    filter: var(--filter--ground);
+}
+
+.ground {
+    color: var(--color--ground);
+}
+
+.bg-ground {
+    background: var(--background--ground);
+}
+
+/* ROCK --- efect */
+.shadow-rock {
+    filter: var(--filter--rock);
+}
+
+.rock {
+    color: var(--color--rock);
+}
+
+.bg-rock {
+    background: var(--background--rock);
+}
+
+/* GHOST --- efect */
+.shadow-ghost {
+    filter: var(--filter--ghost);
+}
+
+.ghost {
+    color: var(--color--ghost);
+}
+
+.bg-ghost {
+    background: var(--background--ghost);
+}
+
+/* STEEL --- efect */
+.shadow-steel {
+    filter: var(--filter--steel);
+}
+
+.steel {
+    color: var(--color--steel);
+}
+
+.bg-steel {
+    background: var(--background--steel);
+}
+
+/* ELECTRIC --- efect */
+.shadow-electric {
+    filter: var(--filter--electric);
+}
+
+.electric {
+    color: var(--color--electric);
+}
+
+.bg-electric {
+    background: var(--background--electric);
+}
+
+/* PSYCHIC --- efect */
+.shadow-psychic {
+    filter: var(--filter--psychic);
+}
+
+.psychic {
+    color: var(--color--psychic);
+}
+
+.bg-psychic {
+    background: var(--background--psychic);
+}
+
+/* ICE --- efect */
+.shadow-ice {
+    filter: var(--filter--ice);
+}
+
+.ice {
+    color: var(--color--ice);
+}
+
+.bg-ice {
+    background: var(--background--ice);
+}
+
+/* DRAGON --- efect */
+.shadow-dragon {
+    filter: var(--filter--dragon);
+}
+
+.dragon {
+    color: var(--color--dragon);
+}
+
+.bg-dragon {
+    background: var(--background--dragon);
+}
+
+/* FAIRY --- efect */
+.shadow-fairy {
+    filter: var(--filter--fairy);
+}
+
+.fairy {
+    color: var(--color--fairy);
+}
+
+.bg-fairy {
+    background: var(--background--fairy);
+}
+
